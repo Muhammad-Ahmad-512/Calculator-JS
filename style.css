@@ -1,0 +1,73 @@
+/* for easy sizing use all before and after element */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+  }
+  
+  
+  body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #e000e7, #4649f7);
+  }
+
+  .calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh; /*using min height to say the grid is 100*/
+
+    /* aligning columns and rows, using minmax to adjust display grid */
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 100px);
+  }
+  
+  /* aligning buttons */
+  .calculator-grid > button {
+      cursor: pointer;
+      font-size: 2rem;
+      border: 2px solid rgb(255, 228, 228);
+      border-radius: 4px ;
+    outline: none;
+    background-color: rgba(236, 230, 230, 0.75);
+  }
+  
+  .calculator-grid > button:hover {
+    background-color: rgb(248, 230, 230);
+  }
+  
+  .span-two {
+    grid-column: span 2;
+  }
+  /* styling display column */
+  .output {
+      border: 2px white solid;
+      border-radius: 7px ;
+    grid-column: 1 / -1;
+    background-color: rgba(61, 57, 57, 0.75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  
+  .output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+  }
+  
+  .output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+  }
+  @media only screen and (max-width: 7px) {
+	.content{
+		width: 90%;
+	}
+	
+}
